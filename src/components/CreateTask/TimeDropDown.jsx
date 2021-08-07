@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { Form } from "react-bootstrap";
-import ClockIcon from "../icons/ClockIcon";
+import ClockIcon from "../../icons/ClockIcon";
 const useStyles = makeStyles({
   timeIcon: {
     position: "absolute",

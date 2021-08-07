@@ -8,11 +8,11 @@ const useStyles = makeStyles({
 });
 export default function SaveButton(props) {
   const classes = useStyles();
-  const { disabled, isInProgress } = props;
+  const { disabled } = props;
 
   return (
     <Button
-      disabled={disabled || isInProgress}
+      disabled={disabled}
       type="submit"
       variant="contained"
       className={classes.saveButton}

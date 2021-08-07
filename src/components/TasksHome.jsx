@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import TaskFields from "./TaskFields";
+import CreateTaskLoader from "./CreateTask/CreateTaskLoader";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -70,7 +70,9 @@ export default function TasksHome() {
           {openTaskDrawer ? "x" : "+"}{" "}
         </AddButton>
       </Header>
-      {openTaskDrawer && <TaskFields fetchStatus={fetchStatus} data={data} />}
+      {openTaskDrawer && (
+        <CreateTaskLoader fetchStatus={fetchStatus} data={data} />
+      )}
       {!openTaskDrawer && <Tasks />}
     </TaskHomeContainer>
   );

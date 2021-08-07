@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { KeyboardDatePicker } from "@material-ui/pickers";
 import { makeStyles } from "@material-ui/core";
 import styled from "styled-components";
-import CalendarIcon from "../icons/CalendarIcon";
+import CalendarIcon from "../../icons/CalendarIcon";
 
 const useStyles = makeStyles({
   calendarIcon: {

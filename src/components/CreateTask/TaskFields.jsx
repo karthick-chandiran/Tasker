@@ -8,11 +8,11 @@ import {
   openTaskDrawerAction,
   removeTask,
   updateTaskData
-} from "../redux/actionCreators";
-import DeleteIcon from "../icons/DeleteIcon";
+} from "../../redux/actionCreators";
+import DeleteIcon from "../../icons/DeleteIcon";
 import { Form, FormControl, InputGroup } from "react-bootstrap";
-import InputIcon from "../icons/InputIcon";
-import { getFormattedDate, getTimeZoneOffsetInSeconds } from "../util";
+import InputIcon from "../../icons/InputIcon";
+import { getFormattedDate, getTimeZoneOffsetInSeconds } from "../../util";
 import TimeDropDown from "./TimeDropDown";
 import DateField from "./DateField";
 import SaveButton from "./SaveButton";
@@ -176,10 +176,14 @@ export default function TaskFields(props) {
         </InputField>
         <ButtonsContainer>
           {props.editMode && <DeleteIcon onClick={onDeleteClick} />}
-          <Button className={classes.cancelButton} onClick={closeDrawer}>
+          <Button
+            disabled={formSubmitInProgress}
+            className={classes.cancelButton}
+            onClick={closeDrawer}
+          >
             Cancel
           </Button>
-          <SaveButton disabled={disableSave} />
+          <SaveButton disabled={disableSave || formSubmitInProgress} />
         </ButtonsContainer>
       </form>
     </FieldsContaienr>
